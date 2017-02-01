@@ -87,13 +87,18 @@ result_by_reference(Name, Ref) ->
 %%====================================================================
 
 init(_) ->
+    {registered_name, Name} = erlang:process_info(self(),
+                                                  registered_name),
+    lager:info("Started abacus_gen_srv: ~p", [Name]),
     {ok, #{}}.
 
 handle_call(Request, _From, State) ->
+    lager:debug("Handling sync request: ~p", [Request]),
     Response = response(Request, State),
     {reply, {ok, Response}, State}.
 
 handle_cast({Ref, Request}, State) ->
+    lager:debug("Handling async request: ~p", [Request]),
     Response = response(Request, State),
     NewState = store_response(Ref, Response, State),
     {noreply, NewState}.
