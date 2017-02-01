@@ -8,7 +8,7 @@
    ]},
   {env,[]},
   {modules, []},
-
+  {mod, {abacus_app, []}},
   {maintainers, []},
   {licenses, []},
   {links, []}
