@@ -5,7 +5,7 @@
 -behavoiur(gen_server).
 
 %% Life-cycle API
--export([start/1,
+-export([start_link/1,
          stop/1]).
 %% Sync API
 -export([addition/3,
@@ -28,12 +28,12 @@
 %% API functions
 %%====================================================================
 
-start(Name) ->
+start_link(Name) ->
     ServerName = {local, Name},
     CallbackModule = ?MODULE,
     InitArgs = [],
     Opts = [],
-    gen_server:start(ServerName, CallbackModule, InitArgs, Opts).
+    gen_server:start_link(ServerName, CallbackModule, InitArgs, Opts).
 
 stop(Name) ->
     gen_server:stop(Name).
