@@ -68,11 +68,7 @@ Eshell V8.1  (abort with ^G)
 
 If you haven't done previous step, start with `git checkout 1-create-project-and-1st-module`.
 
-```shell
-$ mkdir test
-```
-
-Add `test/abacus_tests.erl` starting with
+Create the `test` directory and add `test/abacus_tests.erl` starting with
 
 ```erlang
 -module(abacus_tests).
