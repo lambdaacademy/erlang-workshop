@@ -25,7 +25,7 @@ This in an Erlang Workshop by Lmabda Academy.
 ## 0. Clone repository
 
 ```
-$ git clone https://github.com/mentels/erlang-workshop/
+$ git clone https://github.com/lambdaacademy/erlang-workshop.git
 $ cd erlang-workshop
 ```
 
