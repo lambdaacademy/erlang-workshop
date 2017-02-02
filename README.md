@@ -164,7 +164,7 @@ $ open doc/index.html
 If you haven't done the previous step, start with `git checkout 4-add-documentation`.
 
 Add `src/abacus_srv.erl`. Implement `abacus_srv:start/1` and `abacus_srv:stop/1`
-API function that will spawn and kill the `abacus_srv` process respectively.
+API functions that will spawn and kill the `abacus_srv` process respectively.
 
 ```erlang
 start(Name) ->
@@ -174,7 +174,7 @@ stop(Name) ->
     exit(whereis(Pid), shutdown).
 ```
 
-Implement the `addition/3`, `subtraction/2/3`, `multiplication/3`, `division/3`
+Implement the `addition/3`, `subtraction/3`, `multiplication/3`, `division/3`
 functions in the `abacus_srv` module that will send messages to the `abacus_srv`
 process which in turn will call corresponding functions from the `abacus` module
 and send the response back the the caller:
