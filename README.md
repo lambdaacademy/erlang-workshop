@@ -37,10 +37,9 @@ First create an Erlang application:
 $ ./rebar3 new lib name="abacus" desc="Erlang Abacus"
 ```
 
-> [rebar3] is an Erlang build tool. It has built in help accessible with
-> the help command: `./rebar3 help`.
+> [rebar3] is an Erlang build tool. It has built in help: `./rebar3 help`.
 
-Move `rebar3` into `abacus` directory that was created. From now on, all
+Move `rebar3` into the `abacus` directory that was created. From now on, all
 the actions will be performed in that directory.
 
 Edit the `src/abacus.erl` and create 4 functions for arithmetic operations:
@@ -48,7 +47,7 @@ Edit the `src/abacus.erl` and create 4 functions for arithmetic operations:
 1. `addition/2`
 2. `subtraction/2`
 3. `multiplication/2`
-4, `division/2`.
+4. `division/2`.
 
 Save the files, compile, and run an Erlang shell:
 
@@ -62,7 +61,7 @@ Eshell V8.1  (abort with ^G)
 5
 ```
 
-> With `rebar3 shell` the recommended way to quit the shell is to either use `init:stop().`
+> With `rebar3 shell` the recommended way to quit the Erlang shell is to either use `init:stop().`
 > or `q()` as Ctrl+C Ctrl+C breaks your OS shell formatting.
 
 ## 2. Create tests
