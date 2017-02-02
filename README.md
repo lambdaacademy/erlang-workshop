@@ -124,6 +124,8 @@ $ open _build/test/cover/index.html
 
 ## 4. Add documentation
 
+If you haven't done previous step, start with `git checkout 3-perform-code-coverage-analysis`.
+
 Edit `abacus.erl` to add module and the API functions documentation
 in the EDoc format:
 
@@ -137,7 +139,9 @@ in the EDoc format:
 %% <li>subtraction,</li>
 %% <li>multiplication</li>,
 %% <li>division</li>.
-%%
+-module(abacus).
+
+%% ...
 %% @doc Adds two integers
 %%
 %% This adds `X' to `Y'.
@@ -157,8 +161,7 @@ $ open doc/index.html
 
 ## 5. Create a server
 
-If you haven't done the previous step, start with
-`git checkout 4-add-documentation`.
+If you haven't done the previous step, start with `git checkout 4-add-documentation`.
 
 Add `src/abacus_srv.erl`. Implement `abacus_srv:start/1` and `abacus_srv:stop/1`
 API function that will spawn and kill the `abacus_srv` process respectively.
