@@ -378,7 +378,7 @@ Save, compile and test the server:
 If you haven't done the previous step, start with
 `git checkout 7-make-it-gen_server`.
 
-Add `abacus_sup.erl` module that will implement the [supervisor](`supervisor`)
+Add `abacus_sup.erl` module that will implement the [supervisor]
 behaviour:
 
 ```erlang
@@ -415,9 +415,9 @@ init([AbacusName]) ->
     {ok, {SupFlags, Children}}.
 ```
 
-As the supervisor requires that its children link back to it, change the
+As the supervisor requires that its children [link][links] back to it, change the
 `abacus_gen_srv:start/1` to `abacus_gen_srv:start_link/1` and adjust the
-call to the `gen_server` module:
+call to `gen_server`:
 
 ```erlang
 start_link(Name) ->
@@ -657,3 +657,4 @@ Eshell V8.1  (abort with ^G)
 [lager]: https://github.com/basho/lager
 [relx]: https://github.com/erlware/relx
 [behaviour]: http://erlang.org/doc/design_principles/des_princ.html#id69904
+[links]: http://erlang.org/doc/man/erlang.html#link-1
