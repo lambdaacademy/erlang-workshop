@@ -456,8 +456,8 @@ true
 If you haven't done the previous step, start with
 `git checkout 8-supervise`.
 
-Add the `abacus_app.erl`: the [application](`Application`) callback module.
-Implement the `abacus_app:start/2` which will start the application
+Add the `abacus_app.erl`: the callback module for [application] behaviour.
+Implement the `abacus_app:start/2` which will start the application's
 top-level supervisor and an "empty" `abacus_sup:stop/1` function:
 
 ```erlang
@@ -475,7 +475,7 @@ stop(_) ->
     ok.
 ```
 
-Modify the `abacus.app.src` ([app](Application Resource File])) so that the
+Modify the `abacus.app.src` ([Application Resource File][app]) so that the
 application is properly started:
 
 ```erlang
@@ -497,7 +497,7 @@ application is properly started:
 ```
 
 Instead of hard-coding the abacus server name as `server1`, pass it through
-the application environment using `application:get_env/3`:
+the application environment variables using `application:get_env/3`:
 
 ```erlang
 -define(DEFAULT_ABACUS_NAME, server1).
@@ -533,7 +533,7 @@ ok
 undefined
 ```
 
-Start the application once again as described above and start the
+Start the application once again (as described above) and run
 [Observer]:
 
 ```erlang
