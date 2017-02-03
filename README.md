@@ -220,8 +220,8 @@ If you haven't done the previous step, start with
 `git checkout 5-create-a-server`.
 
 Add asynchronous version of the `abacus` functions to the `src/abacus_srv.erl`
-(`async_addition/1`, ...) and an API for retrieving the asynchronously computed
-results `abacus_srv:result_by_reference/1`. The asynchronous functions are
+(`async_addition/1`, ...) and an API for retrieving the results of asynchronous
+calls: `abacus_srv:result_by_reference/1`. The asynchronous functions are
 expected to return references (see [make_ref/1]) which are to be used to get
 the results:
 
