@@ -558,6 +558,9 @@ that will be used for logging:
        ]}.
 ```
 
+> The `{parse_transform, lager_transform}` is the compiler option
+> needed by lager.
+
 Modify the `abacus.app.src` file so that the `lager` application
 is started before `abacus`:
 
