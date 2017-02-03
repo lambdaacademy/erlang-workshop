@@ -285,8 +285,8 @@ unknown_reference
 If you haven't done the previous step, start with
 `git checkout 6-add-asynchronous-interface`.
 
-Copy the `abacus_srv.erl` into `abacus_gen_srv.erl`. Declare it as [gen_sever]
-behavoiur:
+Copy the `abacus_srv.erl` into `abacus_gen_srv.erl`. Make it [gen_server]
+behaviour (check what [behaviour] is) :
 
 ```erlang
 %% @author Szymon Mentel <szymon.mentel@erlang-solutions.com>
@@ -297,8 +297,8 @@ behavoiur:
 ```
 
 Change the life-cycle API to use respective `gen_server` functions
-and change the `init/1` to match the `gen_server` [gen_server_init](specification).
-Also add the [`terminate/2`](gen_server_terminate).
+and change the `init/1` to match the [specification][gen_server_init].
+Also add the `terminate/2` according to the [specification][gen_server_terminate].
 
 ```erlang
 start(Name) ->
@@ -306,7 +306,7 @@ start(Name) ->
     CallbackModule = ?MODULE,
     InitArgs = [],
     Opts = [],
-    gen_server:start_link(ServerName, CallbackModule, InitArgs, Opts).
+    gen_server:start(ServerName, CallbackModule, InitArgs, Opts).
 
 stop(Name) ->
     gen_server:stop(Name).
@@ -370,8 +370,6 @@ Save, compile and test the server:
 {ok,#Ref<0.0.2.656>}
 4> abacus_gen_srv:result_by_reference(a,Ref).
 {ok,4}
-5> abacus_gen_srv:st
-start/1  stop/1
 5> abacus_gen_srv:stop(a).
 ```
 
@@ -650,7 +648,7 @@ Eshell V8.1  (abort with ^G)
 [EDoc]: http://erlang.org/doc/apps/edoc/chapter.html
 [make_ref/1]: http://erlang.org/doc/man/erlang.html#make_ref-0
 [gen_server]: http://erlang.org/doc/man/gen_server.html
-[gen_server_init]:http://erlang.org/doc/man/gen_server.html#Module:init-1
+[gen_server_init]: http://erlang.org/doc/man/gen_server.html#Module:init-1
 [gen_server_terminate]: http://erlang.org/doc/man/gen_server.html#Module:terminate-2
 [supervisor]: http://erlang.org/doc/man/supervisor.html
 [application]: http://erlang.org/doc/man/application
@@ -658,3 +656,4 @@ Eshell V8.1  (abort with ^G)
 [Observer]: http://erlang.org/doc/man/observer
 [lager]: https://github.com/basho/lager
 [relx]: https://github.com/erlware/relx
+[behaviour]: http://erlang.org/doc/design_principles/des_princ.html#id69904
