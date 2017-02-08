@@ -613,7 +613,7 @@ Save, compile and test the application as in the previous step.
 If you haven't done the previous step, start with
 `git checkout 10-add-external-dependency`.
 
-Add the following [relx][`relx`] section in the `rebar.config`:
+Add the following [relx][relx] section in the `rebar.config`:
 
 ```erlang
 {relx, [
